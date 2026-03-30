@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gerador de Currículo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="painel-formulario">
+      <h1>Gerador de Currículo</h1>
+      <p class="subtitulo">Preencha os dados do cliente</p>
+
+      <div class="grupo">
+        <label for="selectModelo">Modelo do currículo</label>
+        <select id="selectModelo">
+          <option value="classico">Clássico</option>
+          <option value="moderno">Moderno</option>
+        </select>
+      </div>
+
+      <div class="grupo">
+        <label for="inputNome">Nome completo</label>
+        <input type="text" id="inputNome" />
+      </div>
+
+      <div class="grupo">
+        <label for="inputCargo">Cargo / Objetivo</label>
+        <input type="text" id="inputCargo" />
+      </div>
+
+      <div class="grupo">
+        <label for="inputTelefone">Telefone</label>
+        <input type="text" id="inputTelefone" />
+      </div>
+
+      <div class="grupo">
+        <label for="inputEmail">E-mail</label>
+        <input type="email" id="inputEmail" />
+      </div>
+
+      <div class="grupo">
+        <label for="inputCidade">Cidade</label>
+        <input type="text" id="inputCidade" />
+      </div>
+
+      <div class="grupo">
+        <label for="inputResumo">Resumo profissional</label>
+        <textarea id="inputResumo"></textarea>
+      </div>
+
+      <hr />
+
+      <h2>Experiência</h2>
+
+      <div class="grupo">
+        <label for="inputEmpresa1">Empresa</label>
+        <input type="text" id="inputEmpresa1" />
+      </div>
+
+      <div class="grupo">
+        <label for="inputCargoExp1">Cargo</label>
+        <input type="text" id="inputCargoExp1" />
+      </div>
+
+      <div class="grupo">
+        <label for="inputPeriodo1">Período</label>
+        <input type="text" id="inputPeriodo1" />
+      </div>
+
+      <div class="grupo">
+        <label for="inputDesc1">Descrição</label>
+        <textarea id="inputDesc1"></textarea>
+      </div>
+
+      <hr />
+
+      <h2>Formação</h2>
+
+      <div class="grupo">
+        <label for="inputCursoFormacao">Curso</label>
+        <input type="text" id="inputCursoFormacao" />
+      </div>
+
+      <div class="grupo">
+        <label for="inputInstituicao">Instituição</label>
+        <input type="text" id="inputInstituicao" />
+      </div>
+
+      <div class="grupo">
+        <label for="inputPeriodoFormacao">Período</label>
+        <input type="text" id="inputPeriodoFormacao" />
+      </div>
+
+      <hr />
+
+      <h2>Cursos</h2>
+
+      <div id="listaCursosForm">
+        <div class="curso-form-item">
+          <div class="grupo">
+            <label for="inputNomeCurso1">Nome do curso</label>
+            <input type="text" id="inputNomeCurso1" class="input-nome-curso" />
+          </div>
+
+          <div class="grupo">
+            <label for="inputInstituicaoCurso1">Instituição</label>
+            <input type="text" id="inputInstituicaoCurso1" class="input-instituicao-curso" />
+          </div>
+
+          <div class="grupo">
+            <label for="inputAnoCurso1">Ano / Período</label>
+            <input type="text" id="inputAnoCurso1" class="input-ano-curso" />
+          </div>
+        </div>
+      </div>
+
+      <div class="acoes acoes-secundarias">
+        <button id="btnAdicionarCurso" type="button">+ Adicionar curso</button>
+      </div>
+
+      <hr />
+
+      <h2>Habilidades</h2>
+
+      <div class="grupo">
+        <input type="text" id="inputHabilidades" placeholder="Separadas por vírgula" />
+      </div>
+
+      <div class="acoes">
+        <button id="btnLimpar" type="button">Limpar</button>
+        <button id="btnImprimir" type="button">Gerar PDF</button>
+      </div>
+    </aside>
+
+    <main class="painel-preview">
+  <div class="folha modelo-classico" id="curriculoPreview">
+    <div class="layout-curriculo">
+      <aside class="coluna-esquerda">
+        <div class="topo-curriculo">
+          <h1 id="previewNome">Seu Nome</h1>
+          <p id="previewCargo">Cargo / Objetivo</p>
+          <p id="previewContato">Telefone | E-mail | Cidade</p>
+        </div>
+
+        <section class="secao" id="secaoHabilidades">
+          <h2>Habilidades</h2>
+          <ul id="previewHabilidades"></ul>
+        </section>
+      </aside>
+
+      <section class="coluna-direita">
+        <section class="secao" id="secaoResumo">
+          <h2>Resumo</h2>
+          <p id="previewResumo"></p>
+        </section>
+
+        <section class="secao" id="secaoExperiencia">
+          <h2>Experiência</h2>
+          <h3 id="previewCargoExp1"></h3>
+          <p id="previewPeriodo1"></p>
+          <p id="previewDesc1"></p>
+        </section>
+
+        <section class="secao" id="secaoFormacao">
+          <h2>Formação</h2>
+          <h3 id="previewCursoFormacao"></h3>
+          <p id="previewInstituicaoPeriodo"></p>
+        </section>
+
+        <section class="secao" id="secaoCursos">
+          <h2>Cursos</h2>
+          <div id="previewListaCursos"></div>
+        </section>
+      </section>
+    </div>
+  </div>
+</main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
